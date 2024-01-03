@@ -23,16 +23,17 @@ class MyApp extends StatelessWidget {
       title: 'Fine Art Society',
       theme: ThemeData(primarySwatch: Colors.amber, fontFamily: 'Cinzel'),
       initialRoute: '/',
+      debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => const MainPage(),
-        '/artist': (context) => const ArtistPage(),
-        '/news': (context) => const NewsPage(),
-        '/allArtist': (context) => const AllArtistsPage(),
-        '/events': (context) => const EventsPage(),
-        '/contact': (context) => const ContactPage(),
-        '/exhibitions': (context) => const ExhibitionPage(),
-        '/indivisualItem': (context) => const IndivisualPage(),
-        '/productsPage': (context) => const ProductsPage()
+        // '/artist': (context) => const ArtistPage(),
+        // '/news': (context) => const NewsPage(),
+        // '/allArtist': (context) => const AllArtistsPage(),
+        // '/events': (context) => const EventsPage(),
+        // '/contact': (context) => const ContactPage(),
+        // '/exhibitions': (context) => const ExhibitionPage(),
+        // '/indivisualItem': (context) => const IndivisualPage(),
+        // '/productsPage': (context) => const ProductsPage()
         // Add more routes as needed
       },
     );

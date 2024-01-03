@@ -21,7 +21,7 @@ class FooterWidget extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.all(20),
-      color: Colors.black,
+      color: const Color(0xffB00B29),
       child: Column(
         children: [
           const Divider(

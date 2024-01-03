@@ -7,8 +7,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../widgets/footer_widget.dart';
 
-
-
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
@@ -27,11 +25,59 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      endDrawer: Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the drawer if there isn't enough vertical
+        // space to fit everything.
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: const Color(0xffB00B29),
+              ),
+              child: Text(
+                'Menu',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            ListTile(
+              title: const Text('Home'),
+              selected: true,
+              onTap: () {
+                // Update the state of the app
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('ATM'),
+              selected: false,
+              onTap: () {
+                // Update the state of the app
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Deposit'),
+              selected: false,
+              onTap: () {
+                // Update the state of the app
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
+      backgroundColor: const Color(0xffB00B29),
       appBar: const CustomAppBar(),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          double firstFoldHeight = MediaQuery.of(context).size.height * 0.75;
+          double firstFoldHeight =
+              MediaQuery.of(context).size.height * 0.9325153374;
           return SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -39,34 +85,38 @@ class MainPage extends StatelessWidget {
                 // 1. Hero Image
                 Container(
                   height: firstFoldHeight,
-                  color: Colors.black,
-                  child: Stack(
+                  color: const Color(0xffB00B29),
+                  child: Column(
                     children: [
-                      Image.asset(
-                        'assets/background_image.jpg',
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                        height: double.infinity,
+                      SizedBox(
+                        height: 20,
                       ),
-                      Positioned(
-                        bottom: 20,
-                        left: 0,
-                        right: 0,
-                        child: Center(
-                          child: ElevatedButton(
-                            onPressed: () {
-                              launchUrl(Uri.parse(
-                                  'https://app.tryspace.com/M6aiq2y/society-fine-art'));
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black,
-                            ),
-                            child: const Text(
-                              'Enter Virtual Gallery',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
+                      Container(
+                        height:
+                            0.6134969325 * MediaQuery.sizeOf(context).height,
+                        width: 0.5555555556 * MediaQuery.sizeOf(context).width,
+                        child: Image.asset(
+                          'assets/atm.png',
+                          fit: BoxFit.contain,
+                          width: double.infinity,
+                          height: double.infinity,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 60,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          launchUrl(Uri.parse(
+                              'https://app.tryspace.com/M6aiq2y/society-fine-art'));
+                        },
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black,
+                            minimumSize: Size(100, 60)),
+                        child: const Text(
+                          'Find ATM',
+                          style: TextStyle(
+                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -75,14 +125,13 @@ class MainPage extends StatelessWidget {
                 ),
                 // 2. Press Carousel
                 Container(
-                  color: Colors.black,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const SizedBox(height: 20),
                       const Center(
                         child: Text(
-                          'FEATURED IN',
+                          'ACCECPTED IN',
                           style: TextStyle(fontSize: 14, color: Colors.white),
                         ),
                       ),
@@ -111,23 +160,40 @@ class MainPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                const Center(
-                  child: Text(
-                    'FEATURED ARTISTS',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
+                Container(
+                  height: firstFoldHeight,
+                  color: Colors.white,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 0.098 * MediaQuery.sizeOf(context).height,
+                      ),
+                      Container(
+                        height:
+                            0.3680981595 * MediaQuery.sizeOf(context).height,
+                        width: 0.625 * MediaQuery.sizeOf(context).width,
+                        child: Image.asset(
+                          'assets/money.png',
+                          fit: BoxFit.contain,
+                          width: double.infinity,
+                          height: double.infinity,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 0.098 * MediaQuery.sizeOf(context).height,
+                      ),
+                      Container(
+                          width:
+                              0.4861111111 * MediaQuery.sizeOf(context).width,
+                          child: Text(
+                            "Your Trusted Partner for was cash and Bitcoin Solutions",
+                            softWrap: true,
+                            style: TextStyle(fontSize: 23),
+                          ))
+                    ],
                   ),
                 ),
-                const SizedBox(height: 20),
                 // 3. Featured Artists
-                FutureBuilder(
-                    future: readJson(),
-                    builder: (context, snapshot) {
-                      return BuildBlockGrid(
-                        girdData: snapshot.data!,
-                        isRectangular: false,
-                        isEvent: false,
-                      );
-                    }),
                 const SizedBox(
                   height: 20,
                 ),

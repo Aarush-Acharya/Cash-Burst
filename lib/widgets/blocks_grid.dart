@@ -6,14 +6,15 @@ class BuildBlockGrid extends StatelessWidget {
   final bool isEvent;
 
   const BuildBlockGrid(
-      {super.key, required this.girdData,
+      {super.key,
+      required this.girdData,
       required this.isRectangular,
       required this.isEvent});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black, // Set the background color here
+      color: const Color(0xffB00B29), // Set the background color here
       child: Column(
         children: [
           Wrap(
