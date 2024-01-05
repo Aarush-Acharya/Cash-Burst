@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => const MainPage(),
+        '/': (context) => MainPage(),
         // '/artist': (context) => const ArtistPage(),
         // '/news': (context) => const NewsPage(),
         // '/allArtist': (context) => const AllArtistsPage(),

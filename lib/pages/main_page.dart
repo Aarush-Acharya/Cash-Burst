@@ -7,13 +7,14 @@ import 'package:url_launcher/url_launcher.dart';
 import '../widgets/footer_widget.dart';
 
 class MainPage extends StatelessWidget {
-  const MainPage({super.key});
+  MainPage({super.key});
 
   Future<List<dynamic>> readJson() async {
     final String response =
         await rootBundle.loadString('assets/artists_data.json');
     var data = await json.decode(response);
     List<dynamic> artists = data['artists'];
+
     List<dynamic> featuredArtists = artists.where((item) {
       return item['featured'] == true;
     }).toList();
@@ -21,15 +22,19 @@ class MainPage extends StatelessWidget {
     return featuredArtists;
   }
 
+  List<String> steps = [
+    "Insert your Bank Card",
+    "Select Cash or Bitcoin",
+    "Input your Desired Amount",
+    "Enter your KYC Verification ( Bitcoin Only )",
+    "Receive your Cash or Bitcoin!"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
         child: ListView(
-          // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
@@ -88,12 +93,11 @@ class MainPage extends StatelessWidget {
                   child: Column(
                     children: [
                       const SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
-                      SizedBox(
-                        height:
-                            0.6134969325 * MediaQuery.sizeOf(context).height,
-                        width: 0.5555555556 * MediaQuery.sizeOf(context).width,
+                      Container(
+                        height: 0.38 * MediaQuery.sizeOf(context).height,
+                        width: 0.87 * MediaQuery.sizeOf(context).width,
                         child: Image.asset(
                           'assets/atm.png',
                           fit: BoxFit.contain,
@@ -101,8 +105,30 @@ class MainPage extends StatelessWidget {
                           height: double.infinity,
                         ),
                       ),
-                      const SizedBox(
-                        height: 60,
+                      SizedBox(
+                        height:
+                            0.01388888889 * MediaQuery.sizeOf(context).height,
+                      ),
+                      Text(
+                        "BITCOIN ATMs",
+                        style: TextStyle(color: Colors.white, fontSize: 35),
+                      ),
+                      SizedBox(
+                        height:
+                            0.01736111111 * MediaQuery.sizeOf(context).height,
+                      ),
+                      SizedBox(
+                        width: 0.7 * MediaQuery.sizeOf(context).width,
+                        child: Text(
+                          "Redeem your Bank Card for Instant Cash or Bitcoin! Hanger DNS provides Fast, Reliable, and Convenient access to Cash and Bitcoin at any of our ATM Locations!",
+                          softWrap: true,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 16, color: Colors.white),
+                        ),
+                      ),
+                      SizedBox(
+                        height:
+                            0.03680981595 * MediaQuery.sizeOf(context).height,
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -111,28 +137,25 @@ class MainPage extends StatelessWidget {
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.black,
-                            minimumSize: const Size(100, 60)),
+                            minimumSize: const Size(150, 55)),
                         child: const Text(
                           'Find ATM',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
+                          style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
                       ),
-                    ],
-                  ),
-                ),
-                // 2. Press Carousel
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const SizedBox(height: 20),
+                      SizedBox(
+                        height:
+                            0.04166666667 * MediaQuery.sizeOf(context).height,
+                      ),
                       const Center(
                         child: Text(
                           'ACCECPTED IN',
                           style: TextStyle(fontSize: 14, color: Colors.white),
                         ),
+                      ),
+                      SizedBox(
+                        height:
+                            0.01736111111 * MediaQuery.sizeOf(context).height,
                       ),
                       CarouselSlider(
                         items: [
@@ -143,21 +166,31 @@ class MainPage extends StatelessWidget {
                           'assets/press2.png',
                           'assets/press3.png',
                         ].map((pressImagePath) {
-                          return Image.asset(pressImagePath);
+                          return ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.asset(
+                              pressImagePath,
+                            ),
+                          );
                         }).toList(),
                         options: CarouselOptions(
                           height: constraints.maxWidth <= 600
-                              ? firstFoldHeight * 0.2
-                              : firstFoldHeight * 0.2,
+                              ? firstFoldHeight * 0.1
+                              : firstFoldHeight * 0.19,
                           autoPlay: true,
+                          enlargeCenterPage: true,
+                          enlargeFactor: 0.2,
                           viewportFraction:
-                              constraints.maxWidth <= 600 ? 0.2 : 0.2,
+                              constraints.maxWidth <= 600 ? 0.4 : 0.2,
                           enableInfiniteScroll: false,
                         ),
                       ),
                     ],
                   ),
                 ),
+
+                // 2. Press Carousel
+
                 const SizedBox(height: 20),
                 Container(
                   height: firstFoldHeight,
@@ -205,7 +238,8 @@ class MainPage extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 0.098 * MediaQuery.sizeOf(context).height,
+                        height:
+                            0.0490797546 * MediaQuery.sizeOf(context).height,
                       ),
                       Padding(
                         padding: EdgeInsets.only(
@@ -224,8 +258,9 @@ class MainPage extends StatelessWidget {
                               height: 80,
                             ),
                             SizedBox(
-                              height: 400,
+                              height: 530,
                               child: ListView.builder(
+                                  shrinkWrap: true,
                                   itemCount: 5,
                                   itemBuilder: (context, index) {
                                     return Column(
@@ -246,16 +281,22 @@ class MainPage extends StatelessWidget {
                                             SizedBox(
                                               width: 20,
                                             ),
-                                            Text(
-                                              "Hellooo",
-                                              softWrap: true,
-                                              style: TextStyle(
-                                                  color: Colors.white),
+                                            SizedBox(
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width -
+                                                  150,
+                                              child: Text(
+                                                '${steps[index]}',
+                                                softWrap: true,
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 19),
+                                              ),
                                             ),
                                           ],
                                         ),
                                         SizedBox(
-                                          height: 40,
+                                          height: 55,
                                         ),
                                       ],
                                     );
