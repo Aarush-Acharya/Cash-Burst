@@ -94,7 +94,7 @@ class ProductsPage extends ConsumerWidget {
                                                   scrollController.animateTo(
                                                       2200,
                                                       duration:
-                                                          Duration(seconds: 2),
+                                                          const Duration(seconds: 2),
                                                       curve: Curves.decelerate);
                                                 },
                                                 child: Row(
@@ -113,13 +113,13 @@ class ProductsPage extends ConsumerWidget {
                                                             Axis.horizontal,
                                                         allowHalfRating: true,
                                                         itemCount: 5,
-                                                        itemPadding: EdgeInsets
+                                                        itemPadding: const EdgeInsets
                                                             .symmetric(
                                                                 horizontal:
                                                                     4.0),
                                                         itemBuilder:
                                                             (context, _) =>
-                                                                Icon(
+                                                                const Icon(
                                                           Icons.star,
                                                           color: Colors.amber,
                                                         ),
@@ -128,25 +128,25 @@ class ProductsPage extends ConsumerWidget {
                                                           print(rating);
                                                         },
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         width: 10,
                                                       ),
-                                                      Text(
+                                                      const Text(
                                                         "·",
                                                         style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: 30),
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         width: 10,
                                                       ),
-                                                      Text(
+                                                      const Text(
                                                         "4.5",
                                                         style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: 25),
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         width: 10,
                                                       ),
                                                     ]),
@@ -154,8 +154,8 @@ class ProductsPage extends ConsumerWidget {
                                               const SizedBox(
                                                 height: 10,
                                               ),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
+                                              const Padding(
+                                                padding: EdgeInsets.only(
                                                     left: 10),
                                                 child: Text(
                                                   "313 ratings",
@@ -568,7 +568,7 @@ class ProductsPage extends ConsumerWidget {
                                   ],
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 130,
                               ),
                               Padding(
@@ -576,10 +576,10 @@ class ProductsPage extends ConsumerWidget {
                                     const EdgeInsets.symmetric(horizontal: 100),
                                 child: Column(
                                   children: [
-                                    Text("They trust us",
+                                    const Text("They trust us",
                                         style: TextStyle(
                                             color: Colors.white, fontSize: 25)),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 50,
                                     ),
                                     CarouselSlider(
@@ -608,58 +608,58 @@ class ProductsPage extends ConsumerWidget {
                                   ],
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 120,
                               ),
                               Align(
                                 alignment: Alignment.center,
                                 child: Column(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Do you have any questions?",
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 30),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 40,
                                     ),
-                                    Text("Come and talk to us!",
+                                    const Text("Come and talk to us!",
                                         style: TextStyle(
                                             color: Colors.white, fontSize: 20)),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 40,
                                     ),
                                     TextButton(
                                         style: TextButton.styleFrom(
-                                            minimumSize: Size(180, 70),
+                                            minimumSize: const Size(180, 70),
                                             backgroundColor: Colors.black,
                                             shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(15),
-                                                side: BorderSide(
+                                                side: const BorderSide(
                                                     color: Colors.amber))),
                                         onPressed: () {
                                           Navigator.pushNamed(
                                               context, '/contact');
                                         },
-                                        child: Text(
+                                        child: const Text(
                                           "Contact us",
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 19),
                                         )),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 80,
                                     ),
                                     Row(
                                       children: [
-                                        Text(
+                                        const Text(
                                           "Reviews",
                                           style: TextStyle(
                                               fontSize: 30,
                                               color: Colors.white),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 20,
                                         ),
                                         RatingBar.builder(
@@ -672,9 +672,9 @@ class ProductsPage extends ConsumerWidget {
                                           direction: Axis.horizontal,
                                           allowHalfRating: true,
                                           itemCount: 5,
-                                          itemPadding: EdgeInsets.symmetric(
+                                          itemPadding: const EdgeInsets.symmetric(
                                               horizontal: 4.0),
-                                          itemBuilder: (context, _) => Icon(
+                                          itemBuilder: (context, _) => const Icon(
                                             Icons.star,
                                             color: Colors.amber,
                                           ),
@@ -682,28 +682,28 @@ class ProductsPage extends ConsumerWidget {
                                             print(rating);
                                           },
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
-                                        Text(
+                                        const Text(
                                           "4.5",
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 25),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
-                                        Text(
+                                        const Text(
                                           "·",
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 30),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
-                                        Text(
+                                        const Text(
                                           "313 ratings",
                                           style: TextStyle(
                                               color: Colors.white,

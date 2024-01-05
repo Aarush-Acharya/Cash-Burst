@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../widgets/custom_app_bar.dart';
-import '../widgets/blocks_grid.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../widgets/footer_widget.dart';
@@ -35,7 +34,7 @@ class MainPage extends StatelessWidget {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: const Color(0xffB00B29),
+                color: Color(0xffB00B29),
               ),
               child: Text(
                 'Menu',
@@ -88,10 +87,10 @@ class MainPage extends StatelessWidget {
                   color: const Color(0xffB00B29),
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      Container(
+                      SizedBox(
                         height:
                             0.6134969325 * MediaQuery.sizeOf(context).height,
                         width: 0.5555555556 * MediaQuery.sizeOf(context).width,
@@ -102,7 +101,7 @@ class MainPage extends StatelessWidget {
                           height: double.infinity,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 60,
                       ),
                       ElevatedButton(
@@ -112,7 +111,7 @@ class MainPage extends StatelessWidget {
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.black,
-                            minimumSize: Size(100, 60)),
+                            minimumSize: const Size(100, 60)),
                         child: const Text(
                           'Find ATM',
                           style: TextStyle(
@@ -171,21 +170,24 @@ class MainPage extends StatelessWidget {
                       Container(
                         height:
                             0.3680981595 * MediaQuery.sizeOf(context).height,
-                        width: 0.625 * MediaQuery.sizeOf(context).width,
-                        child: Image.asset(
-                          'assets/money.png',
-                          fit: BoxFit.contain,
-                          width: double.infinity,
-                          height: double.infinity,
+                        width: 0.85 * MediaQuery.sizeOf(context).width,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Image.asset(
+                            'assets/money.png',
+                            fit: BoxFit.fill,
+                            width: double.infinity,
+                            height: double.infinity,
+                          ),
                         ),
                       ),
                       SizedBox(
                         height: 0.098 * MediaQuery.sizeOf(context).height,
                       ),
-                      Container(
+                      SizedBox(
                           width:
                               0.4861111111 * MediaQuery.sizeOf(context).width,
-                          child: Text(
+                          child: const Text(
                             "Your Trusted Partner for was cash and Bitcoin Solutions",
                             softWrap: true,
                             style: TextStyle(fontSize: 23),
@@ -196,6 +198,74 @@ class MainPage extends StatelessWidget {
                 // 3. Featured Artists
                 const SizedBox(
                   height: 20,
+                ),
+                Container(
+                  height: firstFoldHeight,
+                  color: const Color(0xffB00B29),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 0.098 * MediaQuery.sizeOf(context).height,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 0.1041666667 *
+                                MediaQuery.sizeOf(context).width),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "How Does BitCoin ATM’s Work?",
+                              style:
+                                  TextStyle(fontSize: 40, color: Colors.white),
+                              softWrap: true,
+                            ),
+                            SizedBox(
+                              height: 80,
+                            ),
+                            SizedBox(
+                              height: 400,
+                              child: ListView.builder(
+                                  itemCount: 5,
+                                  itemBuilder: (context, index) {
+                                    return Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            FittedBox(
+                                              fit: BoxFit.cover,
+                                              child: CircleAvatar(
+                                                child: Center(
+                                                    child:
+                                                        Text('${index + 1}')),
+                                                radius: 20,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                            Text(
+                                              "Hellooo",
+                                              softWrap: true,
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 40,
+                                        ),
+                                      ],
+                                    );
+                                  }),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 // 4, Use the FooterWidget here
                 FooterWidget(),
