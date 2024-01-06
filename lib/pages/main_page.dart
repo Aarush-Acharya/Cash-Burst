@@ -221,8 +221,9 @@ class MainPage extends StatelessWidget {
                           width:
                               0.4861111111 * MediaQuery.sizeOf(context).width,
                           child: const Text(
-                            "Your Trusted Partner for was cash and Bitcoin Solutions",
+                            "Your Trusted Partner for cash and Bitcoin Solutions",
                             softWrap: true,
+                            textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 23),
                           ))
                     ],
@@ -255,11 +256,12 @@ class MainPage extends StatelessWidget {
                               softWrap: true,
                             ),
                             SizedBox(
-                              height: 80,
+                              height: 70,
                             ),
                             SizedBox(
-                              height: 530,
+                              height: 500,
                               child: ListView.builder(
+                                  physics: NeverScrollableScrollPhysics(),
                                   shrinkWrap: true,
                                   itemCount: 5,
                                   itemBuilder: (context, index) {
