@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:fineartsociety/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../widgets/custom_app_bar.dart';
@@ -33,49 +34,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color(0xffB00B29),
-              ),
-              child: Text(
-                'Menu',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            ListTile(
-              title: const Text('Home'),
-              selected: true,
-              onTap: () {
-                // Update the state of the app
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('ATM'),
-              selected: false,
-              onTap: () {
-                // Update the state of the app
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Deposit'),
-              selected: false,
-              onTap: () {
-                // Update the state of the app
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
+      endDrawer: HangerDrawer(),
       backgroundColor: const Color(0xffB00B29),
       appBar: const CustomAppBar(),
       body: LayoutBuilder(
@@ -111,7 +70,8 @@ class MainPage extends StatelessWidget {
                       ),
                       Text(
                         "BITCOIN ATMs",
-                        style: TextStyle(color: Colors.white, fontSize: 35),
+                        style: TextStyle(color: Colors.white, fontSize: 35,),
+                        softWrap: true,
                       ),
                       SizedBox(
                         height:
@@ -233,81 +193,84 @@ class MainPage extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Container(
-                  height: firstFoldHeight,
-                  color: const Color(0xffB00B29),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height:
-                            0.0490797546 * MediaQuery.sizeOf(context).height,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 0.1041666667 *
-                                MediaQuery.sizeOf(context).width),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "How Does BitCoin ATM’s Work?",
-                              style:
-                                  TextStyle(fontSize: 40, color: Colors.white),
-                              softWrap: true,
-                            ),
-                            SizedBox(
-                              height: 70,
-                            ),
-                            SizedBox(
-                              height: 500,
-                              child: ListView.builder(
-                                  physics: NeverScrollableScrollPhysics(),
-                                  shrinkWrap: true,
-                                  itemCount: 5,
-                                  itemBuilder: (context, index) {
-                                    return Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            FittedBox(
-                                              fit: BoxFit.cover,
-                                              child: CircleAvatar(
-                                                child: Center(
-                                                    child:
-                                                        Text('${index + 1}')),
-                                                radius: 20,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            SizedBox(
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width -
-                                                  150,
-                                              child: Text(
-                                                '${steps[index]}',
-                                                softWrap: true,
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 19),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 55,
-                                        ),
-                                      ],
-                                    );
-                                  }),
-                            ),
-                          ],
+                SingleChildScrollView(
+                  child: Container(
+                    height: firstFoldHeight,
+                    color: const Color(0xffB00B29),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height:
+                              0.0490797546 * MediaQuery.sizeOf(context).height,
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: 0.1041666667 *
+                                  MediaQuery.sizeOf(context).width),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "How Does BitCoin ATM’s Work?",
+                                style: TextStyle(
+                                    fontSize: 40, color: Colors.white),
+                                softWrap: true,
+                              ),
+                              SizedBox(
+                                height: 70,
+                              ),
+                              SizedBox(
+                                height: 500,
+                                child: ListView.builder(
+                                    physics: NeverScrollableScrollPhysics(),
+                                    shrinkWrap: true,
+                                    itemCount: 5,
+                                    itemBuilder: (context, index) {
+                                      return Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              FittedBox(
+                                                fit: BoxFit.cover,
+                                                child: CircleAvatar(
+                                                  child: Center(
+                                                      child:
+                                                          Text('${index + 1}')),
+                                                  radius: 20,
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              SizedBox(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width -
+                                                        150,
+                                                child: Text(
+                                                  '${steps[index]}',
+                                                  softWrap: true,
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 19),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 55,
+                                          ),
+                                        ],
+                                      );
+                                    }),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 // 4, Use the FooterWidget here
