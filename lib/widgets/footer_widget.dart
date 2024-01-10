@@ -5,11 +5,9 @@ class FooterWidget extends StatelessWidget {
   // Define the menu items
   Map<String, String> menuItems = {
     'Home': '',
-    'Artist': 'allArtist',
-    'Events': 'events',
-    'Exhibitions': 'exhibitions',
-    'News': 'news',
-    'Contact': 'contact'
+    'Find ATM': 'findAtm',
+    'Browse Bank': 'browseAtm',
+    'Customer Support': 'customerSupport',
   };
 
   FooterWidget({super.key});

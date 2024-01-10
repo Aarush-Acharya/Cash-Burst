@@ -62,7 +62,7 @@ class FindAtm extends ConsumerWidget {
     CheckBoxStates state = ref.watch(valueProvider);
     return Scaffold(
       endDrawer: HangerDrawer(),
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xffB00B29),
       appBar: const CustomAppBar(),
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -71,135 +71,141 @@ class FindAtm extends ConsumerWidget {
           return SingleChildScrollView(
             child: Column(
               children: [
-                // 1. Hero Image
-                const SizedBox(
-                  height: 40,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Text(
-                    "Find A Location",
-                    softWrap: true,
-                    style: TextStyle(color: Colors.black, fontSize: 30),
-                  ),
-                ),
-                SizedBox(
-                  height: 0.05 * MediaQuery.sizeOf(context).height,
-                ),
-                SizedBox(
-                  width: 0.7 * MediaQuery.sizeOf(context).width,
-                  child: Text(
-                    "Search using address city and state or ZIP",
-                    softWrap: true,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18, color: Colors.black),
-                  ),
-                ),
-                SizedBox(
-                  height: 0.03 * MediaQuery.sizeOf(context).height,
-                ),
-                SizedBox(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.sizeOf(context).width > 1000
-                            ? 500
-                            : 0.8 * MediaQuery.sizeOf(context).width,
-                        child: TextField(
-                          decoration: InputDecoration(
-                            suffixIcon: const Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(Icons.search),
-                                SizedBox(
-                                  width: 5,
-                                )
-                              ],
-                            ),
-                            label: const Text('Find Location'),
-                            hintText: 'Enter your search',
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.grey),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Colors.black,
-                                width: 2,
+                Container(
+                  color: Colors.white,
+                  child: Column(children: [
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(
+                        "Find A Location",
+                        softWrap: true,
+                        style: TextStyle(color: Colors.black, fontSize: 30),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 0.05 * MediaQuery.sizeOf(context).height,
+                    ),
+                    SizedBox(
+                      width: 0.7 * MediaQuery.sizeOf(context).width,
+                      child: Text(
+                        "Search using address city and state or ZIP",
+                        softWrap: true,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 18, color: Colors.black),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 0.03 * MediaQuery.sizeOf(context).height,
+                    ),
+                    SizedBox(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: MediaQuery.sizeOf(context).width > 1000
+                                ? 500
+                                : 0.8 * MediaQuery.sizeOf(context).width,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                suffixIcon: const Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(Icons.search),
+                                    SizedBox(
+                                      width: 5,
+                                    )
+                                  ],
+                                ),
+                                label: const Text('Find Location'),
+                                hintText: 'Enter your search',
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Colors.black,
+                                    width: 2,
+                                  ),
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Colors.red,
+                                    width: 2,
+                                  ),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
                               ),
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Colors.red,
-                                width: 2,
-                              ),
-                              borderRadius: BorderRadius.circular(10),
                             ),
                           ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Transform.rotate(
+                              angle: 45 * math.pi / 180,
+                              child: Icon(Icons.navigation_rounded))
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 0.04 * MediaQuery.sizeOf(context).height,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "I want to: ",
+                          style: TextStyle(fontSize: 18),
                         ),
-                      ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Transform.rotate(
-                          angle: 45 * math.pi / 180,
-                          child: Icon(Icons.navigation_rounded))
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 0.04 * MediaQuery.sizeOf(context).height,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "I want to: ",
-                      style: TextStyle(fontSize: 18),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Checkbox(
+                            value: state.state1,
+                            onChanged: (onChanged) {
+                              ref.read(valueProvider.notifier).changeState(0);
+                            }),
+                        Text(
+                          "Buy",
+                          style: TextStyle(fontSize: 18),
+                        ),
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Checkbox(
+                            value: state.state2,
+                            onChanged: (onChanged) {
+                              ref.read(valueProvider.notifier).changeState(1);
+                            }),
+                        Text(
+                          "Sell",
+                          style: TextStyle(fontSize: 18),
+                        )
+                      ],
                     ),
                     SizedBox(
-                      width: 20,
+                      height: 20,
                     ),
-                    Checkbox(
-                        value: state.state1,
-                        onChanged: (onChanged) {
-                          ref.read(valueProvider.notifier).changeState(0);
-                        }),
-                    Text(
-                      "Buy",
-                      style: TextStyle(fontSize: 18),
+                    Divider(),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Text(
+                          "Use our locator to find a location near you or browse our directory"),
                     ),
                     SizedBox(
-                      width: 30,
+                      height: 0.11 * MediaQuery.sizeOf(context).height,
                     ),
-                    Checkbox(
-                        value: state.state2,
-                        onChanged: (onChanged) {
-                          ref.read(valueProvider.notifier).changeState(1);
-                        }),
-                    Text(
-                      "Sell",
-                      style: TextStyle(fontSize: 18),
-                    )
-                  ],
+                  ]),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                Divider(),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
-                      "Use our locator to find a location near you or browse our directory"),
-                ),
-                SizedBox(
-                  height: 0.11 * MediaQuery.sizeOf(context).height,
-                ),
+
                 // 4, Use the FooterWidget here
                 FooterWidget(),
               ],
