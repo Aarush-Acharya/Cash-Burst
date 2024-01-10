@@ -37,15 +37,6 @@ class HangerDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Deposit'),
-            selected: false,
-            onTap: () {
-              // Update the state of the app
-              // Then close the drawer
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
             title: const Text('Browse Bank'),
             selected: false,
             onTap: () {
