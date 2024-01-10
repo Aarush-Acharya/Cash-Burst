@@ -1,4 +1,6 @@
 import 'package:fineartsociety/pages/browse_atm.dart';
+import 'package:fineartsociety/pages/customer_support_page.dart';
+import 'package:fineartsociety/pages/find_atm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'pages/main_page.dart';
@@ -21,6 +23,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => MainPage(),
         // '/artist': (context) => const ArtistPage(),
         '/browseAtm': (context) => BrowseAtm(),
+        '/findAtm': (context) => FindAtm(),
+        '/customerSupport': (context) => CustomerSupport(),
         // '/news': (context) => const NewsPage(),
         // '/allArtist': (context) => const AllArtistsPage(),
         // '/events': (context) => const EventsPage(),

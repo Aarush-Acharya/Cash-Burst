@@ -6,56 +6,65 @@ class HangerDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color(0xffB00B29),
-              ),
-              child: Text(
-                'Menu',
-                style: TextStyle(color: Colors.white),
-              ),
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: const Color(0xffB00B29),
             ),
-            ListTile(
-              title: const Text('Home'),
-              selected: true,
-              onTap: () {
-                // Update the state of the app
-                // Then close the drawer
-                Navigator.pushNamed(context, '/');
-              },
+            child: Text(
+              'Menu',
+              style: TextStyle(color: Colors.white),
             ),
-            ListTile(
-              title: const Text('ATM'),
-              selected: false,
-              onTap: () {
-                // Update the state of the app
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Deposit'),
-              selected: false,
-              onTap: () {
-                // Update the state of the app
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Browse Bank'),
-              selected: false,
-              onTap: () {
-                // Update the state of the app
-                // Then close the drawer
-                Navigator.pushNamed(context, '/browseAtm');
-              },
-            ),
-          ],
-        ),
-      );
+          ),
+          ListTile(
+            title: const Text('Home'),
+            selected: true,
+            onTap: () {
+              // Update the state of the app
+              // Then close the drawer
+              Navigator.pushNamed(context, '/');
+            },
+          ),
+          ListTile(
+            title: const Text('Find ATM'),
+            selected: false,
+            onTap: () {
+              // Update the state of the app
+              // Then close the drawer
+              Navigator.pushNamed(context, '/findAtm');
+            },
+          ),
+          ListTile(
+            title: const Text('Deposit'),
+            selected: false,
+            onTap: () {
+              // Update the state of the app
+              // Then close the drawer
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Browse Bank'),
+            selected: false,
+            onTap: () {
+              // Update the state of the app
+              // Then close the drawer
+              Navigator.pushNamed(context, '/browseAtm');
+            },
+          ),
+          ListTile(
+            title: const Text('Customer Support'),
+            selected: false,
+            onTap: () {
+              // Update the state of the app
+              // Then close the drawer
+              Navigator.pushNamed(context, '/customerSupport');
+            },
+          ),
+        ],
+      ),
+    );
   }
 }

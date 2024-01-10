@@ -2,13 +2,17 @@ import 'dart:convert';
 import 'package:fineartsociety/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../widgets/custom_app_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../widgets/footer_widget.dart';
 import 'dart:math' as math;
 
-class BrowseAtm extends StatelessWidget {
+
+
+class BrowseAtm extends ConsumerWidget {
   BrowseAtm({super.key});
 
   Future<List<dynamic>> readJson() async {
@@ -35,7 +39,7 @@ class BrowseAtm extends StatelessWidget {
   List<String> secondFoldList = ["Rico", "United States"];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       endDrawer: HangerDrawer(),
       backgroundColor: Colors.white,
