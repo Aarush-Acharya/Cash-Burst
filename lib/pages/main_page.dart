@@ -70,7 +70,10 @@ class MainPage extends StatelessWidget {
                       ),
                       Text(
                         "BITCOIN ATMs",
-                        style: TextStyle(color: Colors.white, fontSize: 35,),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 35,
+                        ),
                         softWrap: true,
                       ),
                       SizedBox(
@@ -92,8 +95,7 @@ class MainPage extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          launchUrl(Uri.parse(
-                              'https://app.tryspace.com/M6aiq2y/society-fine-art'));
+                          Navigator.pushNamed(context, '/findAtm');
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.black,
@@ -210,13 +212,13 @@ class MainPage extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "How Does BitCoin ATM’s Work?",
                                 style: TextStyle(
                                     fontSize: 40, color: Colors.white),
                                 softWrap: true,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 70,
                               ),
                               SizedBox(

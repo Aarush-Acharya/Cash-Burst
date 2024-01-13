@@ -54,6 +54,15 @@ class HangerDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/customerSupport');
             },
           ),
+          ListTile(
+            title: const Text('Host Atm'),
+            selected: false,
+            onTap: () {
+              // Update the state of the app
+              // Then close the drawer
+              Navigator.pushNamed(context, '/hostAtm');
+            },
+          ),
         ],
       ),
     );
