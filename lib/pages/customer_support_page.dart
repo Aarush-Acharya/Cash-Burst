@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:fineartsociety/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -71,11 +72,15 @@ class CustomerSupport extends ConsumerWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Text(
-                          "24/7 Award Wining Customer Support",
-                          textAlign: TextAlign.center,
-                          softWrap: true,
-                          style: TextStyle(color: Colors.black, fontSize: 35),
+                        child: SizedBox(
+                          height:
+                              0.1072961373 * MediaQuery.sizeOf(context).height,
+                          child: AutoSizeText(
+                            "24/7 Award Wining Customer Support",
+                            textAlign: TextAlign.center,
+                            softWrap: true,
+                            style: TextStyle(color: Colors.black, fontSize: 35),
+                          ),
                         ),
                       ),
                       SizedBox(

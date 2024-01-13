@@ -217,7 +217,7 @@ class MainPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Text(
-                                "How Does BitCoin ATM’s Work?",
+                                "How Does Bitcoin ATM’s Work?",
                                 style: TextStyle(
                                     fontSize: 40, color: Colors.white),
                                 softWrap: true,

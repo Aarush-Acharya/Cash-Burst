@@ -6,7 +6,6 @@ class FooterWidget extends StatelessWidget {
   Map<String, String> menuItems = {
     'Home': '',
     'Find ATM': 'findAtm',
-    'Browse Bank': 'browseAtm',
     'Customer Support': 'customerSupport',
   };
 
@@ -75,25 +74,25 @@ class FooterWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/facebook_icon.png', // Replace with your Facebook icon asset
+                'assets/facebook.jpeg', // Replace with your Facebook icon asset
                 width: 30,
                 height: 30,
               ),
               const SizedBox(width: 10),
               Image.asset(
-                'assets/instagram_icon.png', // Replace with your Instagram icon asset
+                'assets/insta.jpeg', // Replace with your Instagram icon asset
                 width: 30,
                 height: 30,
               ),
               const SizedBox(width: 10),
               Image.asset(
-                'assets/x_icon.png', // Replace with your Twitter icon asset
+                'assets/twitter.jpeg', // Replace with your Twitter icon asset
                 width: 30,
                 height: 30,
               ),
               const SizedBox(width: 10),
               Image.asset(
-                'assets/google_icon.png', // Replace with your Google icon asset
+                'assets/google.jpeg', // Replace with your Google icon asset
                 width: 30,
                 height: 30,
               ),
@@ -103,7 +102,7 @@ class FooterWidget extends StatelessWidget {
           // Copyright Text
           const Center(
             child: Text(
-              'Fine Art Society © All Rights Reserved. ',
+              'Hanger Ink © All Rights Reserved. ',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 12,
