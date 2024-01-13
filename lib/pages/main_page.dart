@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ui';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:fineartsociety/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
@@ -102,11 +103,12 @@ class MainPage extends StatelessWidget {
                           Navigator.pushNamed(context, '/findAtm');
                         },
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black,
+                            backgroundColor: Colors.white,
                             minimumSize: const Size(150, 55)),
                         child: const Text(
                           'Find ATM',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
+                          style:
+                              TextStyle(color: Color(0xffB00B29), fontSize: 16),
                         ),
                       ),
                       SizedBox(
@@ -159,46 +161,43 @@ class MainPage extends StatelessWidget {
 
                 const SizedBox(height: 20),
                 Container(
-                  height: firstFoldHeight,
-                  color: Colors.white,
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 0.098 * MediaQuery.sizeOf(context).height,
+                    height: firstFoldHeight,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/money.png"),
+                        fit: BoxFit.cover,
                       ),
-                      Container(
-                        height:
-                            0.3680981595 * MediaQuery.sizeOf(context).height,
-                        width: 0.85 * MediaQuery.sizeOf(context).width,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: Image.asset(
-                            'assets/money.png',
-                            fit: BoxFit.fill,
-                            width: double.infinity,
-                            height: double.infinity,
+                    ),
+                    child: Center(
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: BackdropFilter(
+                                filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(20),
+                                  child: SizedBox(
+                                      width: 0.4861111111 *
+                                          MediaQuery.sizeOf(context).width,
+                                      child: const Text(
+                                        "Your Trusted Partner for cash and Bitcoin Solutions",
+                                        softWrap: true,
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 23,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500),
+                                      )),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                      SizedBox(
-                        height: 0.098 * MediaQuery.sizeOf(context).height,
-                      ),
-                      SizedBox(
-                          width:
-                              0.4861111111 * MediaQuery.sizeOf(context).width,
-                          child: const Text(
-                            "Your Trusted Partner for cash and Bitcoin Solutions",
-                            softWrap: true,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 23),
-                          ))
-                    ],
-                  ),
-                ),
+                    )),
                 // 3. Featured Artists
-                const SizedBox(
-                  height: 20,
-                ),
                 SingleChildScrollView(
                   child: Container(
                     height: firstFoldHeight,
