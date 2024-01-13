@@ -111,7 +111,7 @@ class MainPage extends StatelessWidget {
                       ),
                       const Center(
                         child: Text(
-                          'ACCECPTED IN',
+                          'WE ACCEPT',
                           style: TextStyle(fontSize: 14, color: Colors.white),
                         ),
                       ),
