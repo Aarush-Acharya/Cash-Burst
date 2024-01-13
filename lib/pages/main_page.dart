@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:fineartsociety/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -51,8 +52,8 @@ class MainPage extends StatelessWidget {
                   color: const Color(0xffB00B29),
                   child: Column(
                     children: [
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 0.01 * MediaQuery.sizeOf(context).height,
                       ),
                       Container(
                         height: 0.38 * MediaQuery.sizeOf(context).height,
@@ -68,7 +69,8 @@ class MainPage extends StatelessWidget {
                         height:
                             0.01388888889 * MediaQuery.sizeOf(context).height,
                       ),
-                      Text(
+                      AutoSizeText(
+                        maxLines: 1,
                         "BITCOIN ATMs",
                         style: TextStyle(
                           color: Colors.white,
@@ -81,8 +83,10 @@ class MainPage extends StatelessWidget {
                             0.01736111111 * MediaQuery.sizeOf(context).height,
                       ),
                       SizedBox(
+                        height:
+                            0.1480686695 * MediaQuery.sizeOf(context).height,
                         width: 0.7 * MediaQuery.sizeOf(context).width,
-                        child: Text(
+                        child: AutoSizeText(
                           "Redeem your Bank Card for Instant Cash or Bitcoin! Hanger DNS provides Fast, Reliable, and Convenient access to Cash and Bitcoin at any of our ATM Locations!",
                           softWrap: true,
                           textAlign: TextAlign.center,
