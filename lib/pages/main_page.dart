@@ -172,24 +172,27 @@ class MainPage extends StatelessWidget {
                       child: Stack(
                         children: [
                           Positioned(
+                            height: firstFoldHeight,
+                            width: MediaQuery.sizeOf(context).width,
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
                               child: BackdropFilter(
                                 filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                                 child: Padding(
                                   padding: const EdgeInsets.all(20),
-                                  child: SizedBox(
-                                      width: 0.4861111111 *
-                                          MediaQuery.sizeOf(context).width,
-                                      child: const Text(
-                                        "Your Trusted Partner for cash and Bitcoin Solutions",
-                                        softWrap: true,
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 23,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w500),
-                                      )),
+                                  child: Center(
+                                    child: SizedBox(
+                                        width: 0.8 *
+                                            MediaQuery.sizeOf(context).width,
+                                        child: const Text(
+                                          "Your Trusted Partner for cash and Bitcoin Solutions",
+                                          softWrap: true,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              fontSize: 30,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                        )),
+                                  ),
                                 ),
                               ),
                             ),
@@ -240,6 +243,7 @@ class MainPage extends StatelessWidget {
                                               FittedBox(
                                                 fit: BoxFit.cover,
                                                 child: CircleAvatar(
+                                                  backgroundColor: Colors.white,
                                                   child: Center(
                                                       child:
                                                           Text('${index + 1}')),

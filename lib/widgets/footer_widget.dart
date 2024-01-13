@@ -6,6 +6,7 @@ class FooterWidget extends StatelessWidget {
   Map<String, String> menuItems = {
     'Home': '',
     'Find ATM': 'findAtm',
+    'Host ATM': 'hostAtm',
     'Customer Support': 'customerSupport',
   };
 
@@ -22,7 +23,7 @@ class FooterWidget extends StatelessWidget {
       child: Column(
         children: [
           const Divider(
-            color: Colors.amber,
+            color: Colors.white,
             thickness: 1,
           ),
           const SizedBox(height: 10),
