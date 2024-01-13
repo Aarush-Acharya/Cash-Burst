@@ -87,8 +87,10 @@ class CustomerSupport extends ConsumerWidget {
                         height: 0.025 * MediaQuery.sizeOf(context).height,
                       ),
                       SizedBox(
+                        height:
+                            0.1244635193 * MediaQuery.sizeOf(context).height,
                         width: 0.7 * MediaQuery.sizeOf(context).width,
-                        child: Text(
+                        child: AutoSizeText(
                           "Understanding Crypto can be complicated. You have questions, we've got  answers",
                           softWrap: true,
                           textAlign: TextAlign.center,
@@ -99,7 +101,8 @@ class CustomerSupport extends ConsumerWidget {
                         height: 0.025 * MediaQuery.sizeOf(context).height,
                       ),
                       Container(
-                        height: 60,
+                        height:
+                            0.0643776824 * MediaQuery.sizeOf(context).height,
                         width: 250,
                         decoration: BoxDecoration(
                             color: const Color(0xffB00B29),
@@ -116,7 +119,8 @@ class CustomerSupport extends ConsumerWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: Container(
-                          height: 60,
+                          height:
+                              0.0643776824 * MediaQuery.sizeOf(context).height,
                           width: 375,
                           decoration: BoxDecoration(
                               color: const Color(0xffB00B29),
