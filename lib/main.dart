@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hanger Ink',
+      title: 'Bit Burst',
       theme: ThemeData(primarySwatch: Colors.amber, fontFamily: 'Cinzel'),
       initialRoute: '/',
       debugShowCheckedModeBanner: false,

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:fineartsociety/utils/constants.dart';
 import 'package:fineartsociety/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -105,7 +106,7 @@ class CustomerSupport extends ConsumerWidget {
                             0.0643776824 * MediaQuery.sizeOf(context).height,
                         width: 250,
                         decoration: BoxDecoration(
-                            color: const Color(0xffB00B29),
+                            color: appThemeColour,
                             borderRadius: BorderRadius.circular(80)),
                         child: Center(
                             child: Text(
@@ -123,7 +124,7 @@ class CustomerSupport extends ConsumerWidget {
                               0.0643776824 * MediaQuery.sizeOf(context).height,
                           width: 375,
                           decoration: BoxDecoration(
-                              color: const Color(0xffB00B29),
+                              color: appThemeColour,
                               borderRadius: BorderRadius.circular(80)),
                           child: FittedBox(
                             fit: BoxFit.contain,

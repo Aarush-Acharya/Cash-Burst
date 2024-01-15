@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:appwrite/appwrite.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:fineartsociety/services/appwrite_service.dart';
+import 'package:fineartsociety/utils/constants.dart';
 import 'package:fineartsociety/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -558,7 +559,7 @@ class HostAtm extends StatelessWidget {
                                 height: 60,
                                 width: 120,
                                 decoration: BoxDecoration(
-                                    color: const Color(0xffB00B29),
+                                    color: appThemeColour,
                                     borderRadius: BorderRadius.circular(80)),
                                 child: Center(
                                     child: Text(

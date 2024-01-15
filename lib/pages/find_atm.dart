@@ -1,8 +1,11 @@
+import 'dart:async';
 import 'dart:convert';
+import 'package:fineartsociety/utils/constants.dart';
 import 'package:fineartsociety/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../widgets/custom_app_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -56,13 +59,20 @@ class FindAtm extends ConsumerWidget {
   ];
   List<String> firstFoldList = ["Australia", "Canada"];
   List<String> secondFoldList = ["Rico", "United States"];
+  final Completer<GoogleMapController> _controller =
+      Completer<GoogleMapController>();
+
+  static const CameraPosition _kGooglePlex = CameraPosition(
+    target: LatLng(37.42796133580664, -122.085749655962),
+    zoom: 14.4746,
+  );
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     CheckBoxStates state = ref.watch(valueProvider);
     return Scaffold(
       endDrawer: HangerDrawer(),
-      backgroundColor: const Color(0xffB00B29),
+      backgroundColor: appThemeColour,
       appBar: const CustomAppBar(),
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -150,6 +160,27 @@ class FindAtm extends ConsumerWidget {
                               angle: 45 * math.pi / 180,
                               child: Icon(Icons.navigation_rounded))
                         ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 0.04 * MediaQuery.sizeOf(context).height,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: SizedBox(
+                          height: 300,
+                          width: double.maxFinite,
+                          child: GoogleMap(
+                            zoomControlsEnabled: false,
+                            mapType: MapType.normal,
+                            initialCameraPosition: _kGooglePlex,
+                            onMapCreated: (GoogleMapController controller) {
+                              _controller.complete(controller);
+                            },
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(

@@ -10,16 +10,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        title: const Text(
-          'Hanger Ink',
-          style: TextStyle(
-            letterSpacing: 2,
-            fontSize: 20.0,
-            fontFamily: 'Cinzel',
-            // fontWeight: FontWeight.bold,
-            color: Color(0xffB00B29),
-          ),
-        ),
+        title: SizedBox(height: 35, child: Image.asset("assets/logo.png")),
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         centerTitle: false);

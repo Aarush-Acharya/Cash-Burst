@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:ui';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:fineartsociety/utils/constants.dart';
 import 'package:fineartsociety/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -37,7 +38,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: HangerDrawer(),
-      backgroundColor: const Color(0xffB00B29),
+      backgroundColor: appThemeColour,
       appBar: const CustomAppBar(),
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -50,7 +51,7 @@ class MainPage extends StatelessWidget {
                 // 1. Hero Image
                 Container(
                   height: firstFoldHeight,
-                  color: const Color(0xffB00B29),
+                  color: appThemeColour,
                   child: Column(
                     children: [
                       SizedBox(
@@ -105,10 +106,9 @@ class MainPage extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white,
                             minimumSize: const Size(150, 55)),
-                        child: const Text(
+                        child: Text(
                           'Find ATM',
-                          style:
-                              TextStyle(color: Color(0xffB00B29), fontSize: 16),
+                          style: TextStyle(color: appThemeColour, fontSize: 16),
                         ),
                       ),
                       SizedBox(
@@ -127,12 +127,12 @@ class MainPage extends StatelessWidget {
                       ),
                       CarouselSlider(
                         items: [
-                          'assets/press1.png',
-                          'assets/press2.png',
-                          'assets/press3.png',
-                          'assets/press1.png',
-                          'assets/press2.png',
-                          'assets/press3.png',
+                          'assets/10.png',
+                          'assets/11.png',
+                          'assets/12.png',
+                          'assets/10.png',
+                          'assets/11.png',
+                          'assets/12.png',
                         ].map((pressImagePath) {
                           return ClipRRect(
                             borderRadius: BorderRadius.circular(20),
@@ -204,7 +204,7 @@ class MainPage extends StatelessWidget {
                 SingleChildScrollView(
                   child: Container(
                     height: firstFoldHeight,
-                    color: const Color(0xffB00B29),
+                    color: appThemeColour,
                     child: Column(
                       children: [
                         SizedBox(

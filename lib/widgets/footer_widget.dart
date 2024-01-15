@@ -1,4 +1,5 @@
 // lib/widgets/footer_widget.dart
+import 'package:fineartsociety/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class FooterWidget extends StatelessWidget {
@@ -19,7 +20,7 @@ class FooterWidget extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.all(20),
-      color: const Color(0xffB00B29),
+      color: appThemeColour,
       child: Column(
         children: [
           const Divider(
@@ -97,13 +98,19 @@ class FooterWidget extends StatelessWidget {
                 width: 30,
                 height: 30,
               ),
+              const SizedBox(width: 10),
+              Image.asset(
+                'assets/email.jpeg', // Replace with your Google icon asset
+                width: 30,
+                height: 30,
+              ),
             ],
           ),
           const SizedBox(height: 20),
           // Copyright Text
           const Center(
             child: Text(
-              'Hanger Ink © All Rights Reserved. ',
+              'Bit Burst © All Rights Reserved. ',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 12,

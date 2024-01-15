@@ -1,3 +1,4 @@
+import 'package:fineartsociety/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class HangerDrawer extends StatelessWidget {
@@ -9,9 +10,9 @@ class HangerDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
+          DrawerHeader(
             decoration: BoxDecoration(
-              color: const Color(0xffB00B29),
+              color: appThemeColour,
             ),
             child: Text(
               'Menu',
