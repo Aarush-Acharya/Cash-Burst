@@ -254,6 +254,9 @@ class MainPage extends StatelessWidget {
                                                 width: 20,
                                               ),
                                               SizedBox(
+                                                height: 0.02896995708 *
+                                                    MediaQuery.sizeOf(context)
+                                                        .height,
                                                 width:
                                                     MediaQuery.sizeOf(context)
                                                             .width -
@@ -269,7 +272,9 @@ class MainPage extends StatelessWidget {
                                             ],
                                           ),
                                           SizedBox(
-                                            height: 55,
+                                            height: 0.05901287554 *
+                                                MediaQuery.sizeOf(context)
+                                                    .height,
                                           ),
                                         ],
                                       );
