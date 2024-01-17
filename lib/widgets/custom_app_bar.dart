@@ -10,7 +10,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        title: SizedBox(height: 35, child: Image.asset("assets/logo.png")),
+        title: Material(
+            child: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, '/');
+                },
+                child: Ink(height: 35, child: Image.asset("assets/logo.png")))),
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         centerTitle: false);

@@ -165,27 +165,6 @@ class FindAtm extends ConsumerWidget {
                     SizedBox(
                       height: 0.04 * MediaQuery.sizeOf(context).height,
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30),
-                        child: SizedBox(
-                          height: 300,
-                          width: double.maxFinite,
-                          child: GoogleMap(
-                            zoomControlsEnabled: false,
-                            mapType: MapType.normal,
-                            initialCameraPosition: _kGooglePlex,
-                            onMapCreated: (GoogleMapController controller) {
-                              _controller.complete(controller);
-                            },
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 0.04 * MediaQuery.sizeOf(context).height,
-                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -218,6 +197,29 @@ class FindAtm extends ConsumerWidget {
                           style: TextStyle(fontSize: 18),
                         )
                       ],
+                    ),
+                    SizedBox(
+                      height: 0.04 * MediaQuery.sizeOf(context).height,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: SizedBox(
+                          height: 300,
+                          width: MediaQuery.sizeOf(context).width > 1000
+                              ? 960
+                              : double.maxFinite,
+                          child: GoogleMap(
+                            zoomControlsEnabled: false,
+                            mapType: MapType.normal,
+                            initialCameraPosition: _kGooglePlex,
+                            onMapCreated: (GoogleMapController controller) {
+                              _controller.complete(controller);
+                            },
+                          ),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       height: 20,

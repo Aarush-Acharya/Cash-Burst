@@ -523,6 +523,7 @@ class HostAtm extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: Material(
+                            borderRadius: BorderRadius.circular(80),
                             child: InkWell(
                               onTap: () {
                                 Map<dynamic, dynamic> formData = {
@@ -565,7 +566,7 @@ class HostAtm extends StatelessWidget {
                                     child: Text(
                                   "Submit",
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 20),
+                                      color: Color(0xff00D631), fontSize: 20),
                                 )),
                               ),
                             ),

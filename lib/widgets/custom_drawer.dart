@@ -16,10 +16,11 @@ class HangerDrawer extends StatelessWidget {
             ),
             child: Text(
               'Menu',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Color(0xff00D631)),
             ),
           ),
           ListTile(
+            selectedColor: Color(0xff00D631),
             title: const Text('Home'),
             selected: true,
             onTap: () {

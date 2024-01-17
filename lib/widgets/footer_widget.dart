@@ -24,7 +24,7 @@ class FooterWidget extends StatelessWidget {
       child: Column(
         children: [
           const Divider(
-            color: Colors.white,
+            color: Color(0xff00D631),
             thickness: 1,
           ),
           const SizedBox(height: 10),
@@ -43,7 +43,7 @@ class FooterWidget extends StatelessWidget {
                       child: Text(
                         item,
                         style: const TextStyle(
-                          color: Colors.white,
+                          color: Color(0xff00D631),
                           fontSize: 16,
                         ),
                       ),
@@ -62,7 +62,7 @@ class FooterWidget extends StatelessWidget {
                       child: Text(
                         item,
                         style: const TextStyle(
-                          color: Colors.white,
+                          color: Color(0xff00D631),
                           fontSize: 14,
                         ),
                       ),
@@ -112,7 +112,7 @@ class FooterWidget extends StatelessWidget {
             child: Text(
               'Bit Burst © All Rights Reserved. ',
               style: TextStyle(
-                color: Colors.white,
+                color: Color(0xff00D631),
                 fontSize: 12,
               ),
             ),

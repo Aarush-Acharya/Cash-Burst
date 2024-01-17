@@ -75,7 +75,7 @@ class MainPage extends StatelessWidget {
                         maxLines: 1,
                         "BITCOIN ATMs",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Color(0xff00D631),
                           fontSize: 35,
                         ),
                         softWrap: true,
@@ -92,7 +92,8 @@ class MainPage extends StatelessWidget {
                           "Redeem your Bank Card for Instant Cash or Bitcoin! Hanger DNS provides Fast, Reliable, and Convenient access to Cash and Bitcoin at any of our ATM Locations!",
                           softWrap: true,
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 16, color: Colors.white),
+                          style:
+                              TextStyle(fontSize: 16, color: Color(0xff00D631)),
                         ),
                       ),
                       SizedBox(
@@ -104,7 +105,7 @@ class MainPage extends StatelessWidget {
                           Navigator.pushNamed(context, '/findAtm');
                         },
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
+                            backgroundColor: Color(0xff00D631),
                             minimumSize: const Size(150, 55)),
                         child: Text(
                           'Find ATM',
@@ -118,7 +119,8 @@ class MainPage extends StatelessWidget {
                       const Center(
                         child: Text(
                           'WE ACCEPT',
-                          style: TextStyle(fontSize: 14, color: Colors.white),
+                          style:
+                              TextStyle(fontSize: 14, color: Color(0xff00D631)),
                         ),
                       ),
                       SizedBox(
@@ -189,7 +191,7 @@ class MainPage extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                               fontSize: 30,
-                                              color: Colors.white,
+                                              color: Color(0xff00D631),
                                               fontWeight: FontWeight.bold),
                                         )),
                                   ),
@@ -221,7 +223,7 @@ class MainPage extends StatelessWidget {
                               const Text(
                                 "How Does Bitcoin ATM’s Work?",
                                 style: TextStyle(
-                                    fontSize: 40, color: Colors.white),
+                                    fontSize: 40, color: Color(0xff00D631)),
                                 softWrap: true,
                               ),
                               const SizedBox(
@@ -243,7 +245,8 @@ class MainPage extends StatelessWidget {
                                               FittedBox(
                                                 fit: BoxFit.cover,
                                                 child: CircleAvatar(
-                                                  backgroundColor: Colors.white,
+                                                  backgroundColor:
+                                                      Color(0xff00D631),
                                                   child: Center(
                                                       child:
                                                           Text('${index + 1}')),
@@ -265,7 +268,7 @@ class MainPage extends StatelessWidget {
                                                   '${steps[index]}',
                                                   softWrap: true,
                                                   style: TextStyle(
-                                                      color: Colors.white,
+                                                      color: Color(0xff00D631),
                                                       fontSize: 19),
                                                 ),
                                               ),
