@@ -20,11 +20,11 @@ class FooterWidget extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.all(20),
-      color: appThemeColour,
+      color: Color(0xff00D631),
       child: Column(
         children: [
           const Divider(
-            color: Color(0xff00D631),
+            color: Colors.white,
             thickness: 1,
           ),
           const SizedBox(height: 10),
@@ -43,7 +43,7 @@ class FooterWidget extends StatelessWidget {
                       child: Text(
                         item,
                         style: const TextStyle(
-                          color: Color(0xff00D631),
+                          color: Colors.white,
                           fontSize: 16,
                         ),
                       ),
@@ -62,7 +62,7 @@ class FooterWidget extends StatelessWidget {
                       child: Text(
                         item,
                         style: const TextStyle(
-                          color: Color(0xff00D631),
+                          color: Colors.white,
                           fontSize: 14,
                         ),
                       ),

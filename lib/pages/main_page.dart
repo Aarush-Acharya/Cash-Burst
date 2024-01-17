@@ -75,9 +75,9 @@ class MainPage extends StatelessWidget {
                         maxLines: 1,
                         "BITCOIN ATMs",
                         style: TextStyle(
-                          color: Color(0xff00D631),
-                          fontSize: 35,
-                        ),
+                            color: Color(0xff00D631),
+                            fontSize: 35,
+                            fontWeight: FontWeight.w300),
                         softWrap: true,
                       ),
                       SizedBox(
@@ -92,8 +92,7 @@ class MainPage extends StatelessWidget {
                           "Redeem your Bank Card for Instant Cash or Bitcoin! Hanger DNS provides Fast, Reliable, and Convenient access to Cash and Bitcoin at any of our ATM Locations!",
                           softWrap: true,
                           textAlign: TextAlign.center,
-                          style:
-                              TextStyle(fontSize: 16, color: Color(0xff00D631)),
+                          style: TextStyle(fontSize: 16, color: Colors.black),
                         ),
                       ),
                       SizedBox(
@@ -119,8 +118,7 @@ class MainPage extends StatelessWidget {
                       const Center(
                         child: Text(
                           'WE ACCEPT',
-                          style:
-                              TextStyle(fontSize: 14, color: Color(0xff00D631)),
+                          style: TextStyle(fontSize: 14, color: Colors.black),
                         ),
                       ),
                       SizedBox(
@@ -191,7 +189,7 @@ class MainPage extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                               fontSize: 30,
-                                              color: Color(0xff00D631),
+                                              color: Colors.white,
                                               fontWeight: FontWeight.bold),
                                         )),
                                   ),
@@ -223,7 +221,7 @@ class MainPage extends StatelessWidget {
                               const Text(
                                 "How Does Bitcoin ATM’s Work?",
                                 style: TextStyle(
-                                    fontSize: 40, color: Color(0xff00D631)),
+                                    fontSize: 40, color: Colors.black),
                                 softWrap: true,
                               ),
                               const SizedBox(
@@ -248,8 +246,11 @@ class MainPage extends StatelessWidget {
                                                   backgroundColor:
                                                       Color(0xff00D631),
                                                   child: Center(
-                                                      child:
-                                                          Text('${index + 1}')),
+                                                      child: Text(
+                                                    '${index + 1}',
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  )),
                                                   radius: 20,
                                                 ),
                                               ),
@@ -268,7 +269,7 @@ class MainPage extends StatelessWidget {
                                                   '${steps[index]}',
                                                   softWrap: true,
                                                   style: TextStyle(
-                                                      color: Color(0xff00D631),
+                                                      color: Colors.black,
                                                       fontSize: 19),
                                                 ),
                                               ),
